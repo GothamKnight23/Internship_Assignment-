@@ -1,0 +1,75 @@
+import java.util.*;
+public class Calculator {
+    public static  void sum(float x, float y) {                            //funtion to perfrom addition operation 
+        System.out.println("Addition of "+x+" & "+y+" = "+(x+y));
+    }
+    public static void sub(float x, float y){                              //funtion to perfrom substration operation
+        System.out.println("Substraction of "+x+" & "+y+" = "+(x-y));
+    }
+    public static void div(float x, float y) {                             //funtion to perfrom division operation
+        System.out.println("Division of "+x+" by "+y+" = "+(x/y));
+    }
+    public static void multi(float x, float y){                            //funtion to perfrom multiplication operation
+        System.out.println("Multiplication of "+x+" & "+y+" = "+(x*y));
+    }
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        float a = 0.0f;
+        float b = 0.0f;
+        System.out.println("Welcome To Your Calculator");
+        System.out.println("Enter your choice :\n1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n0.Exit Calculator");
+        int x = s.nextInt();
+        do{ 
+            if(x==0){ 
+                System.out.println("Exiting The Calcutor, Thank You !");
+                break;
+            }
+            else if(x==1){
+               System.out.println("Enter number x and y to perform the addition (x+y) : ");
+                System.out.print("x : ");
+                a = s.nextFloat();
+                System.out.println("");
+                System.out.print("y : ");
+                b = s.nextFloat();
+                sum(a, b);
+           }
+           else if(x==2) { 
+                System.out.println("Enter number x and y to perform the substration (x-y) : ");
+                System.out.print("x : ");
+                a = s.nextFloat();
+                System.out.println("");
+                System.out.print("y : ");
+                b = s.nextFloat();
+                sub(a, b);
+           }
+           else if(x==3) { 
+                System.out.println("Enter number x and y to perform the multiplication (x*y) : ");
+                System.out.print("x : ");
+                a = s.nextFloat();
+                System.out.println("");
+                System.out.print("y : ");
+                b = s.nextFloat();
+                multi(a, b);
+           }
+           else if(x==4) { 
+                System.out.println("Enter number x and y to perform the multiplication (x*y) : ");
+                System.out.print("x : ");
+                a = s.nextFloat();
+                System.out.println("");
+                System.out.print("y : ");
+                b = s.nextFloat();
+                div(a, b);
+           }
+           else if(x>4 || x<0){ 
+                System.out.println("Invalid Input !! Please Make A Valid Choice This Time");
+           }
+           System.out.println("Enter your choice :\n1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n0.Exit Calculator");
+           x = s.nextInt();
+           if(x==0){ 
+                System.out.println("Exiting The Calcutor, Thank You !");
+                break;
+            }
+        }while(x!=0);
+        s.close();
+    }
+}
